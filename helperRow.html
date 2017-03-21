@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>看護員列表</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <style type="text/css">
+    body {
+        position: relative;
+    }
+    
+    .profilephoto {
+        height: 150px;
+        float: left;
+    }
+    
+    .brief {
+        /*width: 600px;*/
+        margin-top: 30px;
+    }
+    
+    .profileBTN {
+        width: 100px;
+        float: left;
+    }
+    
+    #photo {
+        height: 150px;
+    }
+    
+    #BTN {
+        height: 150px;
+        width: 50px;
+        float: left;
+    }
+    
+    .code {
+        display: none;
+    }
+    
+    .sidebar {
+        padding: 20px;
+        border: 1px solid;
+    }
+    
+    .sortRow {
+        position: relative;
+        height: 25px;
+        border-bottom: 1px solid;
+        margin-bottom: 20px;
+    }
+    
+    .sortSex {
+        padding: 0px;
+        text-align: center;
+    }
+    
+     @media screen and (max-width: 992px){
+    	.helpLang div{
+             display:inline;
+    	}
+    	.input-group div{
+    		display:inline;
+    	}
+    }
+    
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-default" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="sr-only"></span>
+                    <span class="sr-only"></span>
+                    <span class="sr-only"></span>
+                </button>
+                <a class="navbar-brand" href="#"> Brand</a>
+            </div>
+        </div>
+    </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-4">
+                <div class="bs-docs-sidebar hidden-print sidebar" role="complementary">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <label>選擇性別:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <label calss="radio-inline">
+                                    <input type="radio" name="sexradio" id="sexid" value="male">男
+                                </label>
+                                <label calss="radio-inline">
+                                    <input type="radio" name="sexradio" id="sexid" value="female">女
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <label>年資:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <div class="input-group">
+                                    <div>
+                                        <input type="text" id="" name="" size="7" maxlength="2" placeholder="請輸入整數">
+                                        <label> 年以上</label>
+                                    </div>
+                                    <div>
+                                        <input type="text" id="" name="" size="7" maxlength="2" placeholder="請輸入整數">
+                                        <label> 年以下</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-4">
+                                <label>服務範圍</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <span id="twzipcode">
+					</div>
+				</div>
+
+				<div class="form-group">
+					<div class="col-sm-4">
+						<label>擅長語言</label>
+					</div>
+					<div class="col-sm-8">
+					<div class="helpLang">
+						<div><input class='hlang' name="helpLang"
+										type="checkbox" id="1" value="1" size="6" /> <label for="1"
+										class="langLBL">國語</label></div>
+										<div><input class='hlang'
+										name="helpLang" type="checkbox" id="2" value="2" size="6" />
+										<label for="2" class="langLBL">英語</label> </div>
+										<div><input class='hlang'
+										name="helpLang" type="checkbox" id="3" value="3" size="6" />
+										<label for="3" class="langLBL">日語</label> </div>
+										<div><input class='hlang'
+										name="helpLang" type="checkbox" id="4" value="4" size="6" />
+										<label for="4" class="langLBL">台語</label> </div>
+										<div><input class='hlang'
+										name="helpLang" type="checkbox" id="5" value="5" size="6" />
+										<label for="5" class="langLBL">客家語</label> </div>
+									</div>	
+					</div>
+
+				</div>
+				<div align="right" class="form-group">
+					<button type="submit" class="btn btn-default">篩選</button>
+
+				</div>
+
+
+
+			</form>
+		</div>
+	</div>
+	<div class="col-sm-12 col-md-8">
+        <div class="row">
+        <div class="sortRow hidden-xs hidden-sm">
+             <div class="col-sm-3">
+        	<B>頭像</B>
+                            </div>
+                            <div class="col-sm-1 sortSex">
+                                <B>性別</B>
+                             </div>
+        <div class="col-sm-2"><a href="#">
+        	<B>年資</B><span class="glyphicon glyphicon-chevron-up"><span class="glyphicon glyphicon-chevron-down"></a>
+        </div>
+        <div class="col-sm-3">
+        	<a href="#"><B>服務範圍</B><span class="glyphicon glyphicon-chevron-up"><span class="glyphicon glyphicon-chevron-down"></a>
+        </div>
+        <div class="col-sm-3">
+        	<a href="#"><B>擅長語言</B><span class="glyphicon glyphicon-chevron-up"><span class="glyphicon glyphicon-chevron-down"></a>
+        </div>
+           </div>
+
+        </div>
+
+		<div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div>
+         <div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div><div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div><div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div><div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div><div class="row">
+			
+			<div class="helperRow">
+         <div class="col-sm-3">
+         	<div class="profilephoto ">
+			<!-- <img id="photo"src="images/ad.jpg"> -->
+			<img id="photo" src="images/helper.jpg" alt="看護大頭貼" class="img-circle">
+		</div>
+         </div>
+
+         <div class="col-sm-1">
+        	男
+        </div>
+        <div class="col-sm-2">
+        	5
+        </div>
+        <div class="col-sm-3">
+        	台北市 大安區
+        </div>
+        <div class="col-sm-3">
+        	台語 英語 國語
+        </div>
+        <div class="col-sm-9">
+        	<p>自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹自我介紹</p>
+        </div>
+         
+		</div>
+
+		<div align="right" class="col-sm-12">
+			<button type="button" class="btn btn-primary btn-lg active">關注</button>
+         </div>
+
+         </div>
+	</div>
+		
+
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"> </script>
+		
+	<script src="js/jquery.twzipcode-1.7.12.js"></script>
+
+
+	<script type="text/javascript">
+		
+		$(function() {
+			$('#twzipcode').twzipcode();
+			$("input[name='zipcode']").addClass('code');
+			$("select[name='district']").addClass('countrydistrict');
+			$("select[name='county']").addClass('countrydistrict');
+			})
+	</script>
+		
+</body>
+
+</html>
